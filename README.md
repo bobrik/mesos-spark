@@ -19,7 +19,7 @@ Note that you need compiled spark version, not source code.
 ### Spark shell
 
 ```
-docker run --rm -t -i --net=host bobrik/mesos-spark:1.1.0 /opt/spark/bin/spark-shell \
+docker run --rm -t -i --net=host bobrik/mesos-spark:1.1.1 /opt/spark/bin/spark-shell \
   --master <mesos master> --conf spark.executor.uri=<spark distribution url>
 ```
 
@@ -32,7 +32,7 @@ sc.parallelize(1 to 1000).count()
 ### Spark submit
 
 ```
-docker run --rm --net=host -v /app/on/host:/app/in/docker bobrik/mesos-spark:1.1.0 \
+docker run --rm --net=host -v /app/on/host:/app/in/docker bobrik/mesos-spark:1.1.1 \
   /opt/spark/bin/spark-submit --master <mesos master> \
   --conf spark.executor.uri=<spark distribution url> /app/in-docker
 ```
